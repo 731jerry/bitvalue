@@ -1,0 +1,2 @@
+<!--pages/ownMarkets/ownMarkets.wxml-->
+<text>pages/ownMarkets/ownMarkets.wxml{{this.userInfo.nickName}}</text>

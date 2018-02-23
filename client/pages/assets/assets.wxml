@@ -1,0 +1,9 @@
+<!--pages/assets/assets.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
+    </view>
+  </view>
+</view>

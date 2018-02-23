@@ -1,0 +1,41 @@
+<!--pages/news/news.wxml-->
+<view>
+  <!-- news swiper -->
+  <view class="container" style="width:100%;">
+    <view class="page-body" style="width:100%;">
+      <view class="page-section  swiper" style="width:100%;">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{activities}}" wx:key="*this">
+            <swiper-item>
+              <image src="{{item}}" class="swiper-item" mode="aspectFill" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+
+  <!-- button -->
+  <view>
+    <button class="share-btn" open-type="share">分享</button>
+  </view>
+</view>
+
+<view class="index-bd">
+  <view class="kind-list">
+    <view class="weui-panel__bd">
+      <view wx:for="{{topics}}" wx:for-item="topic" wx:key="key" class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image src="{{topic.author.avatar_url}}" class="weui-media-box__thumb"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title" hover="true" hover-class="title_hover" bindtap="showDetail" data-id="{{topic.id}}">{{topic.title}}
+            <image style="width: 15px; height: 15px; background-color: #eeeeee;" wx:if="{{topic.top}}" src="/image/icon/top.png" title="置顶"></image>
+            <image style="width: 15px; height: 15px; background-color: #eeeeee;" wx:if="{{topic.good}}" src="/image/icon/good.png" title="精华"></image>
+          </view>
+          <view class="weui-media-box__desc topic-summary">发布:{{topic.create_at_forread}} 分类: {{topic.tab}} 点击: {{topic.visit_count}} 回复:{{topic.reply_count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

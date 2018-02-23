@@ -1,0 +1,3 @@
+<!--pages/markets/markets.wxml-->
+<text>pages/markets/markets.wxml</text>
+<text class="userinfo-nickname">{{nickName}}</text>
